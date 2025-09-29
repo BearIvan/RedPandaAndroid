@@ -4,6 +4,9 @@
   <remote name="redpanda" fetch="https://github.com/BearIvan" revision="refs/heads/16"/>
   <remote name="grapheneos-gitlab" fetch="https://gitlab.com/grapheneos/" revision="refs/heads/16"/>
   <remote name="aosp" fetch="https://android.googlesource.com" review="https://android-review.googlesource.com/"/>
+  <remote name="estkme-group" fetch="https://github.com/estkme-group" revision="refs/heads/master"/>
+  <remote name="petercxy" fetch="https://gitea.angry.im/PeterCxy" revision="refs/heads/master"/>
+
   <default revision="refs/tags/android-16.0.0_r1" remote="aosp" sync-j="4"/>
   <superproject name="platform/superproject" remote="aosp" revision="android-16.0.0_r1"/>
   <contactinfo bugurl="go/repo-bug"/>
@@ -798,6 +801,7 @@
   <project path="packages/apps/TvSystemUI" name="platform/packages/apps/TvSystemUI" groups="pdk-fs"/>
   <project path="packages/apps/UniversalMediaPlayer" name="platform/packages/apps/UniversalMediaPlayer"/>
   <project path="packages/apps/Updater" name="platform_packages_apps_Updater" remote="redpanda"/>
+  <project path="packages/apps/OpenEUICC" name="openeuicc" remote="estkme-group"/>
   <project path="packages/apps/WallpaperPicker2" name="platform_packages_apps_WallpaperPicker2" groups="pdk-fs,sysui-studio" remote="grapheneos" aosp-name="platform/packages/apps/WallpaperPicker2"/>
   <project path="packages/inputmethods/LatinIME" name="platform_packages_inputmethods_LatinIME" groups="pdk-fs" remote="grapheneos" aosp-name="platform/packages/inputmethods/LatinIME"/>
   <project path="packages/inputmethods/LeanbackIME" name="platform/packages/inputmethods/LeanbackIME" groups="pdk-fs"/>
@@ -868,6 +872,7 @@
   <project path="packages/wallpapers/LivePicker" name="platform/packages/wallpapers/LivePicker" groups="pdk-fs"/>
   <project path="pdk" name="platform/pdk" groups="pdk"/>
   <project path="platform_testing" name="platform/platform_testing" groups="pdk-fs,pdk-cw-fs,cts,sysui-studio"/>
+  <project path="packages/apps/OpEUICC-Deps" name="android_prebuilts_openeuicc-deps" clone-depth="1" remote="petercxy"/>
   <project path="prebuilts/abi-dumps/ndk" name="platform/prebuilts/abi-dumps/ndk" groups="pdk-cw-fs,pdk-fs" clone-depth="1"/>
   <project path="prebuilts/abi-dumps/platform" name="platform/prebuilts/abi-dumps/platform" groups="pdk-cw-fs,pdk-fs" clone-depth="1"/>
   <project path="prebuilts/abi-dumps/vndk" name="platform/prebuilts/abi-dumps/vndk" groups="pdk-cw-fs,pdk-fs" clone-depth="1"/>
