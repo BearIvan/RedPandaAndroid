@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote name="grapheneos" fetch="https://github.com/GrapheneOS/" revision="refs/heads/16"/>
+  <remote name="redpanda" fetch="https://github.com/BearIvan" revision="refs/heads/16"/>
   <remote name="grapheneos-gitlab" fetch="https://gitlab.com/grapheneos/" revision="refs/heads/16"/>
   <remote name="aosp" fetch="https://android.googlesource.com" review="https://android-review.googlesource.com/"/>
   <default revision="refs/tags/android-16.0.0_r1" remote="aosp" sync-j="4"/>
@@ -18,7 +19,7 @@
   </project>
   <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" groups="pdk"/>
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed"/>
-  <project path="build/make" name="platform_build" groups="pdk,sysui-studio" remote="grapheneos" aosp-name="platform/build">
+  <project path="build/make" name="platform_build" groups="pdk,sysui-studio" remote="redpanda" aosp-name="platform/build">
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk"/>
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default"/>
     <linkfile src="core" dest="build/core"/>
@@ -796,7 +797,7 @@
   <project path="packages/apps/TvSettings" name="platform/packages/apps/TvSettings" groups="pdk-fs,pdk-cw-tvc"/>
   <project path="packages/apps/TvSystemUI" name="platform/packages/apps/TvSystemUI" groups="pdk-fs"/>
   <project path="packages/apps/UniversalMediaPlayer" name="platform/packages/apps/UniversalMediaPlayer"/>
-  <project path="packages/apps/Updater" name="platform_packages_apps_Updater" remote="grapheneos"/>
+  <project path="packages/apps/Updater" name="platform_packages_apps_Updater" remote="redpanda"/>
   <project path="packages/apps/WallpaperPicker2" name="platform_packages_apps_WallpaperPicker2" groups="pdk-fs,sysui-studio" remote="grapheneos" aosp-name="platform/packages/apps/WallpaperPicker2"/>
   <project path="packages/inputmethods/LatinIME" name="platform_packages_inputmethods_LatinIME" groups="pdk-fs" remote="grapheneos" aosp-name="platform/packages/inputmethods/LatinIME"/>
   <project path="packages/inputmethods/LeanbackIME" name="platform/packages/inputmethods/LeanbackIME" groups="pdk-fs"/>
