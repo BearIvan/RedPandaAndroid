@@ -1,5 +1,5 @@
-aosp_revision: android-16.0.0_r1
-revision: refs/heads/16
+aosp_revision: android-16.0.0_r3
+revision: refs/heads/16-qpr1
 additional_remotes:
   - name: grapheneos
     fetch: https://github.com/GrapheneOS/
@@ -8,99 +8,41 @@ additional_remotes:
 additional_projects:
   - path: branding
     name: branding
-  - path: device/google/akita
-    name: device_google_akita
   - path: device/google/akita-kernels/6.1
     name: device_google_akita-kernels_6.1
     clone_depth: 1
-  - path: device/google/akita-sepolicy
-    name: device_google_akita-sepolicy
-  - path: device/google/bluejay
-    name: device_google_bluejay
   - path: device/google/bluejay-kernels/6.1
     name: device_google_bluejay-kernels_6.1
     clone_depth: 1
-  - path: device/google/bluejay-sepolicy
-    name: device_google_bluejay-sepolicy
-  - path: device/google/caimito
-    name: device_google_caimito
   - path: device/google/caimito-kernels/6.1
     name: device_google_caimito-kernels_6.1
     clone_depth: 1
-  - path: device/google/caimito-sepolicy
-    name: device_google_caimito-sepolicy
-  - path: device/google/comet
-    name: device_google_comet
   - path: device/google/comet-kernels/6.1
     name: device_google_comet-kernels_6.1
     clone_depth: 1
-  - path: device/google/comet-sepolicy
-    name: device_google_comet-sepolicy
-  - path: device/google/felix
-    name: device_google_felix
   - path: device/google/felix-kernels/6.1
     name: device_google_felix-kernels_6.1
     clone_depth: 1
-  - path: device/google/felix-sepolicy
-    name: device_google_felix-sepolicy
-  - path: device/google/gs-common
-    name: device_google_gs-common
-  - path: device/google/gs101
-    name: device_google_gs101
-  - path: device/google/gs101-sepolicy
-    name: device_google_gs101-sepolicy
-  - path: device/google/gs201
-    name: device_google_gs201
-  - path: device/google/gs201-sepolicy
-    name: device_google_gs201-sepolicy
-  - path: device/google/lynx
-    name: device_google_lynx
+  - path: device/google/laguna-kernels/6.6
+    name: device_google_laguna-kernels_6.6
   - path: device/google/lynx-kernels/6.1
     name: device_google_lynx-kernels_6.1
     clone_depth: 1
-  - path: device/google/lynx-sepolicy
-    name: device_google_lynx-sepolicy
-  - path: device/google/pantah
-    name: device_google_pantah
   - path: device/google/pantah-kernels/6.1
     name: device_google_pantah-kernels_6.1
     clone_depth: 1
-  - path: device/google/pantah-sepolicy
-    name: device_google_pantah-sepolicy
-  - path: device/google/raviole
-    name: device_google_raviole
   - path: device/google/raviole-kernels/6.1
     name: device_google_raviole-kernels_6.1
     clone_depth: 1
-  - path: device/google/shusky
-    name: device_google_shusky
   - path: device/google/shusky-kernels/6.1
     name: device_google_shusky-kernels_6.1
     clone_depth: 1
-  - path: device/google/shusky-sepolicy
-    name: device_google_shusky-sepolicy
-  - path: device/google/tangorpro
-    name: device_google_tangorpro
   - path: device/google/tangorpro-kernels/6.1
     name: device_google_tangorpro-kernels_6.1
     clone_depth: 1
-  - path: device/google/tangorpro-sepolicy
-    name: device_google_tangorpro-sepolicy
-  - path: device/google/tegu
-    name: device_google_tegu
   - path: device/google/tegu-kernels/6.1
     name: device_google_tegu-kernels_6.1
     clone_depth: 1
-  - path: device/google/tegu-sepolicy
-    name: device_google_tegu-sepolicy
-  - path: device/google/zuma
-    name: device_google_zuma
-  - path: device/google/zuma-sepolicy
-    name: device_google_zuma-sepolicy
-  - path: device/google/zumapro
-    name: device_google_zumapro
-  - path: device/google/zumapro-sepolicy
-    name: device_google_zumapro-sepolicy
   - path: external/AppCompatConfig
     name: platform_external_AppCompatConfig
     groups: pdk-fs
@@ -185,6 +127,7 @@ additional_non_manifest_repos:
   - kernel_manifest-6.6
   - kernel_manifest-6.12
   - kernel_pixel
+  - kernel_pixel_muzel
   - platform_manifest
 forked_aosp_repos:
   - art
@@ -197,19 +140,20 @@ forked_aosp_repos:
   - device/common
   - device/generic/goldfish
   - external/conscrypt
-  - external/robolectric
+  - external/dng_sdk
   - external/selinux
+  - external/skia
+  - external/sqlite
+  - frameworks/av
   - frameworks/base
   - frameworks/libs/systemui
   - frameworks/native
   - frameworks/opt/net/wifi
   - frameworks/opt/telephony
-  - hardware/google/pixel
-  - hardware/google/pixel-sepolicy
-  - hardware/interfaces
   - libcore
   - packages/apps/Calendar
   - packages/apps/CellBroadcastReceiver
+  - packages/apps/CertInstaller
   - packages/apps/Contacts
   - packages/apps/Dialer
   - packages/apps/DocumentsUI
@@ -230,7 +174,6 @@ forked_aosp_repos:
   - packages/modules/Connectivity
   - packages/modules/DnsResolver
   - packages/modules/HealthFitness
-  - packages/modules/IntentResolver
   - packages/modules/NetworkStack
   - packages/modules/Nfc
   - packages/modules/Permission
@@ -242,17 +185,19 @@ forked_aosp_repos:
   - packages/providers/ContactsProvider
   - packages/providers/DownloadProvider
   - packages/providers/MediaProvider
+  - packages/providers/TelephonyProvider
   - packages/services/Mms
   - packages/services/Telecomm
   - packages/services/Telephony
-  - system/apex
   - system/ca-certificates
   - system/core
   - system/extras
   - system/logging
   - system/netd
   - system/sepolicy
+  - system/tools/aidl
   - system/vold
+  - tools/apksig
   - tools/metalava
 clone_depth_1_aosp_repos:
   - external/deqp
@@ -271,7 +216,17 @@ clone_depth_1_aosp_repos:
   - packages/apps/Car/RotaryImePrebuilt
   - tools/deviceinfra/prebuilts
 removed_aosp_repos:
+  - device/google/atv
+  - device/google/common/etm
+  - device/google/contexthub
+  - device/google/trout
   - external/chromium-webview
+  - external/nos/host/generic
+  - hardware/google/av
+  - hardware/google/pixel
+  - hardware/google/pixel-sepolicy
+  - hardware/nxp/nfc
+  - hardware/nxp/secure_element
   - packages/apps/Browser2
   - packages/apps/Camera2
   - packages/apps/DeskClock
