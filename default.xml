@@ -3,7 +3,7 @@
     <remote name="grapheneos" fetch="https://github.com/GrapheneOS/" revision="refs/heads/16-qpr1"/>
     <remote name="grapheneos-gitlab" fetch="https://gitlab.com/grapheneos/" revision="refs/heads/16-qpr1"/>
     <remote name="aosp" fetch="https://android.googlesource.com" review="https://android-review.googlesource.com/"/>
-    <remote name="redpanda" fetch="https://github.com/BearIvan" revision="refs/heads/redpanda_16"/>
+    <remote name="redpanda" fetch="https://github.com/BearIvan" revision="refs/heads/red_panda_16"/>
     <remote name="estkme-group" fetch="https://github.com/estkme-group" revision="refs/heads/master"/>
     <remote name="petercxy" fetch="https://gitea.angry.im/PeterCxy" revision="refs/heads/master"/>
   <default revision="refs/tags/android-16.0.0_r3" remote="aosp" sync-j="4"/>
