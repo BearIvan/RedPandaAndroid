@@ -9,7 +9,7 @@
 `default.xml` закрепляет исходники релиза по commit SHA. Отличия от upstream:
 
 - `build/make`: включение OpenEUICC в продукт;
-- `packages/apps/Updater`: сервер RedPanda и существующая проверка номера обновления;
+- `packages/apps/Updater`: сервер RedPanda и сравнение времени сборки, поддерживающее номера `TIMON_Z…`;
 - OpenEUICC и его готовые зависимости, также закреплённые по SHA;
 - `sync-s="true"` для OpenEUICC: загрузка обязательных подмодулей LPAC и cJSON.
 
@@ -39,6 +39,8 @@ yarn --cwd vendor/adevtool/ install
 adevtool generate-all -d tegu
 lunch tegu-cur-user
 export OFFICIAL_BUILD=true
+export BUILD_NUMBER=TIMON_Z$(date -u +%Y%m%d)00
+export BUILD_DATETIME=$(date -u +%s)
 m -j16 target-files-package otatools-package
 ```
 
